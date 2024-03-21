@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Text</title>
+        <script src = "https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+        <script src ="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
+        <script src ="https://unpkg.com/aframe-animation-component@4.0.0/dist/aframe-animation-component.min.js"></script>
+        <link rel= "stylesheet" href="style.css">
+    </head>
+    <body id= "body2">
+        
+        <div id = "vrlogo">
+            <a href = "index.html"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 365.3 346" style="enable-background:new 0 0 365.3 346" xml:space="preserve"><style>.st1{fill:#f7931e;stroke:#000;stroke-miterlimit:10}</style><path style="fill:#fbb03b;stroke:#000;stroke-miterlimit:10" d="M268.2 16.7h-177l-88.5 158 88.5 158h177l88.5-158z"/><path class="st1" d="M143.8 16.7h-52l-26 47 26 47h52l26-47z"/><path class="st1" d="M221.7 63.7h-52l-26 47 26 47h52l26-47z"/><path class="st1" d="M227 153h-52l-26 47 26 47h52l26-47z"/><path class="st1" d="M305 200h-52l-26 47 26 47h52l26-47z"/><text transform="matrix(.9265 0 0 1 41.333 208.667)" style="font-size:97.2111px;font-family:'OCRAExtended';fill:#ff0;stroke:#f15a24;stroke-miterlimit:10">HONEY</text><path class="st1" d="M227 247h-52l-26 47 26 47h52l26-47z"/></svg></a>
+            
+        </div>
+        
+        <a-scene>
+            <a-asset>
+                <img id = "sky" src = "images/sky.jpg">
+                <img id = "ground" src = "textures/137222_header_small.jpg">
+            </a-asset>
+            <a-camera>
+                <a-cursor></a-cursor>
+            </a-camera>
+            
+            <a-entity position = "0 6 -9"
+                      text = "value : Put the cursor on the box to see the menu. Enjoy;
+                              color: #ff0000;
+                              width: 10;">
+            
+            </a-entity>
+            
+            <a-entity position ="-4 3 -8" scale ="1 2 1"
+                      text = "value : Menu.
+                              Savoury:
+                              ----------------------------------------------------
+                              Honey Mustard Wrap
+                              Milk-and-Honey White Bread
+                              Honey Cheese Pizza
+                              Hawaiian Honey Burger
+                              Honey Soy Noodles;
+                              align:center;
+                              width:5;
+                              color:#ffffff";
+                      geometry = "primitive: plane; width:auto; height: auto"
+                      material = "color:lightyellow; shader: flat; visible: true"
+                      event-set__enter ="_event: mouseenter; text.color : #ff0000"
+                      event-set__leave = "_event: mouseleave; text.color: #212121">
+            </a-entity>
+            
+            <a-entity position ="4 3 -8" scale ="1 2 1"
+                      text = "value : Menu.
+                              Sweet:
+                              --------------------------------------------------------
+                              Honey Joy Cheesecake
+                              Latte Honey Mousse
+                              Berry Jam and honey cobbler
+                              Honey Waffle
+                              Saffron Honey Jalebi;
+                              align:center;
+                              width:5;
+                              color:#ffffff";
+                      geometry = "primitive: plane; width:auto; height: auto"
+                      material = "color:lightyellow; shader: flat; visible: true"
+                      event-set__enter ="_event: mouseenter; text.color : #ff0000"
+                      event-set__leave = "_event: mouseleave; text.color: #212121">
+            </a-entity>
+            
+            <a-plane rotation = "-90 0 0"
+                     height = "200"
+                     width = "200"
+                     
+                     src = "#ground">
+            </a-plane>
+           
+            
+            <a-sky rotation = "360 0 0"
+                   src ="#sky"
+                   color = "#00ffff"
+                   >
+            </a-sky>
+            
+        </a-scene>
+    
+    </body>
+
+</html>

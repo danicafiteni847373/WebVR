@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Home vr</title>
+        <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+        <script src="https://unpkg.com/aframe-animation-component@^4.1.2/dist/aframe-animation-component.min.js"></script>
+        <link rel="stylesheet" href= "style.css">
+        
+        <script>
+            AFRAME.registerComponent('play-pause',{
+                init:function(){
+                    var myVideo = document.querySelector('#recording');
+                    var videoControls = document.querySelector('#videoControls');
+                    this.el.addEventListener('click', function(){
+                        if(myVideo.paused){
+                            myVideo.play();
+                            videoControls.setAttribute('src', '#pause');
+                        }else{
+                            myVideo.pause();
+                            videoControls.setAttribute('src', '#play');
+                        }
+                    })
+                }
+            });
+        </script>
+    </head>
+    <body>
+        
+        <div id = "vrlogo">
+            <a href = "index.html"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 365.3 346" style="enable-background:new 0 0 365.3 346" xml:space="preserve"><style>.st1{fill:#f7931e;stroke:#000;stroke-miterlimit:10}</style><path style="fill:#fbb03b;stroke:#000;stroke-miterlimit:10" d="M268.2 16.7h-177l-88.5 158 88.5 158h177l88.5-158z"/><path class="st1" d="M143.8 16.7h-52l-26 47 26 47h52l26-47z"/><path class="st1" d="M221.7 63.7h-52l-26 47 26 47h52l26-47z"/><path class="st1" d="M227 153h-52l-26 47 26 47h52l26-47z"/><path class="st1" d="M305 200h-52l-26 47 26 47h52l26-47z"/><text transform="matrix(.9265 0 0 1 41.333 208.667)" style="font-size:97.2111px;font-family:'OCRAExtended';fill:#ff0;stroke:#f15a24;stroke-miterlimit:10">HONEY</text><path class="st1" d="M227 247h-52l-26 47 26 47h52l26-47z"/></svg></a>
+            
+        </div>
+        
+        <a-scene>
+            <a-assets>
+                <img id="play" src= "play">
+                <img id="pause" src="pause">
+                <video id="recording" src = "recording/svgrecording.mp4">
+                </video>
+                <img id="sky" src= "images/sky.jpg">
+                <img id="ground" src="images/ground.png">
+            </a-assets>
+            
+           
+            
+            <a-camera>
+                <a-cursor color = "red"></a-cursor>
+            </a-camera>
+            
+            <!-- Video 16:9-->
+            <a-video src = "#recording" width ="8" height ="4.5" position="2 3 -5">
+                <!--Play and pause interaction-->
+                <a-image id="VideoControls" src="play" position="0 -2.5 0" scale="0.5 0.5 1" play-pause color = "#ff0000"></a-image>
+            
+            </a-video>
+            <a-sky src="#sky" color ="#00008b"></a-sky>
+            <a-plane src="#ground" rotation="-90 0 0" width="60" height="30" ></a-plane>
+            
+            <a-entity id="lightSphere" geometry="primitive:sphere" material="color: lightyellow; shader:flat" light="type: point" position="-20 15 -25" animation="property: position; from:-20 15 -25;to:-20.5 15 -25; loop:true; dir:alternate;"></a-entity>
+
+            
+        </a-scene>
+    
+    </body>
+
+
+
+</html>

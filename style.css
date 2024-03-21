@@ -1,0 +1,202 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+
+body{
+    background-color: orange;
+    
+}
+
+/*animation logo*/
+#container{
+    width : 100%;
+    height: 205px;
+    background-color: transparent;
+    margin-right: 100%;
+    margin-left: -200%;
+}
+
+
+
+
+@keyframes dash {
+    0% {
+        stroke-dasharray: 5;
+        stroke: orange;
+        
+    }
+    
+    20%{
+        stroke-dasharray: 30;  
+        stroke: red;
+        
+    }
+    30%{
+        stroke-dasharray: 50;  
+        stroke: orange;
+    }
+    
+    40%{
+        stroke-dasharray: 70;  
+        stroke: red;
+    }
+    
+    50%{
+        stroke-dasharray: 100; 
+        stroke: black;
+    
+    }
+}
+
+.st0{
+    stroke : black ;
+    stroke-dasharray: 100;
+    animation: dash 15s;  
+    stroke-width: 2px;
+}
+
+
+
+.st1{
+    stroke : black ;
+    stroke-dasharray: 100;
+    animation: dash 15s linear;
+    stroke-width: 2px;
+}
+.st2{
+    stroke : black ;
+    stroke-dasharray: 100;
+    animation: dash 15s linear;
+    stroke-width: 2px;
+    
+}
+
+.stb{
+    animation: roll 2s forwards;
+    transform: rotateZ(0deg);
+    animation: three 7.5s ;
+    animation-direction: alternate-reverse;
+    background-color: #439772;
+    
+
+}
+
+@keyframes three {
+  0% {
+    transform: rotateZ(0);
+  }
+  100% {
+    transform: rotateZ(20deg);
+  }
+}
+
+/*end logo animation*/
+
+
+
+
+
+
+.box1{
+    fill: floralwhite;
+    width: 100%;
+    height: 700px;
+ 
+}
+
+#header_anime{
+    position:absolute;
+    margin: 80px auto 0  5;
+    margin-left: 30px;
+    left: 0;
+    right: 10;
+    width: 15%;
+    height: 30%;
+    background:none;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    color:darkorange;
+    font-size:20px;
+    cursor:pointer;
+    outline:0;
+    margin-top: 1%;
+}
+
+#logo{
+    width: 20%;
+    height:20%;
+    position: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -45%;
+}
+
+#text{
+    color: black;
+    text-align: center;
+    margin-left: -30%;
+    margin-right: -60%;
+    margin-top: -90%;
+    width: 600px;
+    transform: transalteY(-50px);
+    
+}
+
+h1{
+    letter-spacing: 48px;
+    text-align: center;
+    font-size: 400%;
+    margin-left: -25%;
+    margin-top: 0%;
+    
+}
+
+h3{
+    text-align: center;
+    letter-spacing: 4px;
+    font-size: 180%;
+    margin-left: -35%;
+    margin-top: -55%;
+}
+
+#icon1{
+    width: 10%;
+    height: 10%;
+    margin-left: 85%;
+    margin-top: -3%;
+    padding: 5px;
+  
+}
+
+
+#icon2{
+    width: 10%;
+    height: 10%;
+    margin-left: 85%;
+    margin-top: 0%;
+    padding: 5px;
+}
+
+#icon3{
+    width: 10%;
+    height: 10%;
+    margin-left: 85%;
+    margin-top: 0%;
+    padding: 5px;
+}
+
+
+.info{
+    margin-left: 2%;
+    position: absolute;
+    color: black;
+    font-family: cursive;
+    width:70%;    
+    padding: 30px;
+    -webkit-box-shadow: 5px 5px 5px 0px orange, inset 4px 4px 15px 0px orange, 5px 5px 15px 5px rgba(0,0,0,0); 
+    box-shadow: 8px 8px 8px 0px orange, inset 4px 4px 15px 0px lightyellow, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+
